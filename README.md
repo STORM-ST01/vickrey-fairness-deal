@@ -1,6 +1,5 @@
 # 🏥 Vickrey Fairness Deal – Subastas Transparentes en Blockchain para el Sector Salud
 
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Ethereum](https://img.shields.io/badge/network-Ethereum%20Testnet-yellow)](https://sepolia.etherscan.io)
 
 ## 📋 Descripción
