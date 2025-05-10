@@ -1,0 +1,33 @@
+# Bytecode y build
+artifacts/
+cache/
+build/
+*.dbg.json
+
+# Dependencias y entornos
+node_modules/
+.env
+.env.*
+
+# Entorno virtual Python
+venv/
+__pycache__/
+*.py[cod]
+
+# Archivos del sistema / VS Code
+.DS_Store
+.vscode/
+
+# Archivos de salida / logs
+*.log
+*.out
+*.pid
+
+# Archivos de análisis o informes temporales
+slither-report.*
+*.csv
+*.txt
+
+# IDEs y herramientas
+.idea/
+*.sw?
