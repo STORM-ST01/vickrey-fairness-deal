@@ -1,0 +1,20 @@
+'solc --version' running
+'solc .\VickreyAunction.sol --combined-json abi,ast,bin,bin-runtime,srcmap,srcmap-runtime,userdoc,devdoc,hashes --allow-paths .,C:\Users\danij\Desktop\RemixWS\contracts' running
+INFO:Detectors:
+VickreyAuction.finalizeAuction(uint256) (VickreyAunction.sol#137-170) uses timestamp for comparisons
+	Dangerous comparisons:
+	- require(bool,string)(block.timestamp >= auctions[auctionId].revealEndTime,Fase de revelacion aun activa) (VickreyAunction.sol#138)
+VickreyAuction.confirmarEntrega(uint256) (VickreyAunction.sol#172-176) uses timestamp for comparisons
+	Dangerous comparisons:
+	- require(bool,string)(block.timestamp <= auction.entregaDeadline,Entrega fuera de plazo) (VickreyAunction.sol#174)
+VickreyAuction.recuperarFondosNoUsados(uint256) (VickreyAunction.sol#201-209) uses timestamp for comparisons
+	Dangerous comparisons:
+	- require(bool,string)(block.timestamp > auction.entregaDeadline,Plazo no vencido) (VickreyAunction.sol#204)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#block-timestamp
+INFO:Detectors:
+Version constraint ^0.8.21 contains known severe issues (https://solidity.readthedocs.io/en/latest/bugs.html)
+	- VerbatimInvalidDeduplication.
+It is used by:
+	- ^0.8.21 (VickreyAunction.sol#2)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#incorrect-versions-of-solidity
+INFO:Slither:. analyzed (1 contracts with 100 detectors), 4 result(s) found

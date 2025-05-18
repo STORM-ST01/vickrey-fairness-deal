@@ -1,0 +1,60 @@
+'solc --version' running
+'solc .\VickreyAunction.sol --combined-json abi,ast,bin,bin-runtime,srcmap,srcmap-runtime,userdoc,devdoc,hashes --allow-paths .,C:\Users\danij\Desktop\RemixWS\contracts' running
+INFO:Detectors:
+VickreyAuction.finalizeAuction(uint256).lowestBidder (VickreyAunction.sol#137) is a local variable never initialized
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#uninitialized-local-variables
+INFO:Detectors:
+VickreyAuction.setOracle(address) (VickreyAunction.sol#67-69) should emit an event for: 
+	- oracle = _oracle (VickreyAunction.sol#68) 
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#missing-events-access-control
+INFO:Detectors:
+VickreyAuction.setOracle(address)._oracle (VickreyAunction.sol#67) lacks a zero-check on :
+		- oracle = _oracle (VickreyAunction.sol#68)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#missing-zero-address-validation
+INFO:Detectors:
+VickreyAuction.finalizeAuction(uint256) (VickreyAunction.sol#133-166) uses timestamp for comparisons
+	Dangerous comparisons:
+	- require(bool,string)(block.timestamp >= auctions[auctionId].revealEndTime,Fase de revelacion aun activa) (VickreyAunction.sol#134)
+VickreyAuction.confirmarEntrega(uint256) (VickreyAunction.sol#168-172) uses timestamp for comparisons
+	Dangerous comparisons:
+	- require(bool,string)(block.timestamp <= auction.entregaDeadline,Entrega fuera de plazo) (VickreyAunction.sol#170)
+VickreyAuction.recuperarFondosNoUsados(uint256) (VickreyAunction.sol#197-205) uses timestamp for comparisons
+	Dangerous comparisons:
+	- require(bool,string)(block.timestamp > auction.entregaDeadline,Plazo no vencido) (VickreyAunction.sol#200)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#block-timestamp
+INFO:Detectors:
+Version constraint ^0.8.20 contains known severe issues (https://solidity.readthedocs.io/en/latest/bugs.html)
+	- VerbatimInvalidDeduplication
+	- FullInlinerNonExpressionSplitArgumentEvaluationOrder
+	- MissingSideEffectsOnSelectorAccess.
+It is used by:
+	- ^0.8.20 (VickreyAunction.sol#2)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#incorrect-versions-of-solidity
+INFO:Detectors:
+Parameter VickreyAuction.setOracle(address)._oracle (VickreyAunction.sol#67) is not in mixedCase
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#conformance-to-solidity-naming-conventions
+INFO:Detectors:
+VickreyAuction.owner (VickreyAunction.sol#5) should be immutable 
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#state-variables-that-could-be-declared-immutable
+INFO:Slither:. analyzed (1 contracts with 100 detectors), 9 result(s) found
+
+
+INFO:Printers:
+Compiled with solc
+Total number of contracts in source files: 1
+Source lines of code (SLOC) in source files: 170
+Number of  assembly lines: 0
+Number of optimization issues: 1
+Number of informational issues: 2
+Number of low issues: 5
+Number of medium issues: 1
+Number of high issues: 0
+
+
++----------------+-------------+------+------------+--------------+-------------+
+| Name           | # functions | ERCS | ERC20 info | Complex code | Features    |
++----------------+-------------+------+------------+--------------+-------------+
+| VickreyAuction | 9           |      |            | No           | Receive ETH |
+|                |             |      |            |              | Send ETH    |
++----------------+-------------+------+------------+--------------+-------------+
+INFO:Slither:. analyzed (1 contracts)

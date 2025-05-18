@@ -23,11 +23,6 @@ __pycache__/
 *.out
 *.pid
 
-# Archivos de análisis o informes temporales
-slither-report.*
-*.csv
-*.txt
-
 # IDEs y herramientas
 .idea/
 *.sw?
